@@ -1,4 +1,4 @@
-# Project Title
+# Bills to Pay
 
 Simple application to store and calculate all your bills.
 
