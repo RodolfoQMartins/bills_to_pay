@@ -2,16 +2,16 @@ from pymongo import MongoClient
 from pprint import pprint
 
 client = MongoClient('mongodb://127.0.0.1:27017')
-db=client.gastos
-collection = db.meusGastos
+db=client.bills
+collection = db.myBills
 
 my_expenses = []
 
 def inset(data):
     print(data)
-    insert = db.meusGastos.insert(data)
+    insert = collection.insert(data)
     pprint(insert)
-    print '--- Dado cadastrado com succeso! ---' 
+    print '--- Data registered successfully! ---' 
 
 def getValues():
     for obj in collection.find():
@@ -24,14 +24,14 @@ def listItens():
     for obj in collection.find():
         item = obj['item']
         price = obj['price']
-        print'Nome: %s, Custo: %s' % \
+        print'Name: %s, Price: %s' % \
         (item,price)
 
 
 def dataSum(prices):
     result = sum(prices)
 
-    print 'Gasto mensais de: %s' % \
+    print 'Month bills: %s' % \
     (result)
     
 

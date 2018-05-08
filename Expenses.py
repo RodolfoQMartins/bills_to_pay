@@ -1,9 +1,9 @@
 import Data
 
 def expensesList():
-    print 'Digite o nome do gasto'
+    print 'Enter the bill name:'
     item = raw_input()
-    print 'Digite o valor do gasto'
+    print 'Enter the value of that bill:'
     price = float(raw_input())
     
     data = [{ 'item': item, 'price': price}]
